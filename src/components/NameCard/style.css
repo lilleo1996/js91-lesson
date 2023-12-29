@@ -1,0 +1,33 @@
+.name-card{
+    margin: 4px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+    border: 4px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+}
+.name{
+    font-weight: bold;
+}
+.age{
+    font-style: italic;
+}
+
+.red {
+    background-color: rgb(240, 90, 90);
+}
+
+.blue {
+    background-color: rgb(76, 76, 211);
+}
+
+.name-card button {
+    margin-top: 8px;
+    background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+    border: 1px solid #30CFD0;
+    border-radius: 3px;
+    color: white;
+}
