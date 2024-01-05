@@ -1,17 +1,24 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 import logo from "./logo.svg";
 import "./App.css";
 import NameCard from "./components/NameCard";
-import LoginForm from "./components/LoginForm";
-import TotalAge from "./components/TotalAge";
+import TodoList from "./components/TodoList";
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [users, setUsers] = useState([
-    { name: "Alice", age: 19, gender: "female" },
-    { name: "John", age: 20, gender: "male" },
-    { name: "Cris", age: 21, gender: "male" },
+    { id: uuidv4(), name: "Alice", age: 19, gender: "female" },
+    { id: uuidv4(), name: "John", age: 20, gender: "male" },
+    { id: uuidv4(), name: "Cris", age: 21, gender: "male" },
   ]);
+
+  const renderNameCard = () => {
+    return users.map((user) => (
+      <NameCard user={user} increaseAge={increaseAge} />
+    ));
+  };
 
   const increaseAge = (name) => {
     console.log(name);
@@ -28,12 +35,18 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <NameCard user={users[0]} increaseAge={increaseAge} />
-        <NameCard user={users[1]} increaseAge={increaseAge} />
-        <NameCard user={users[2]} increaseAge={increaseAge} />
-        <TotalAge users={users} />
-        <LoginForm />
+        {/* {renderNameCard()}
+        <TotalAge users={users} /> */}
+        {isLoggedIn && <h4>Account is Hieu</h4>}
+        <button
+          style={{ backgroundColor: isLoggedIn ? "yellow" : "red" }}
+          onClick={() => {
+            setIsLoggedIn(!isLoggedIn);
+          }}
+        >
+          {isLoggedIn ? "Logout" : "Login"}
+        </button>
+        <TodoList />
       </header>
     </div>
   );
