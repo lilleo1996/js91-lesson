@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-import logo from "./logo.svg";
 import "./App.css";
 import NameCard from "./components/NameCard";
 import TodoList from "./components/TodoList";
+import Counter from "./components/Counter";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isVisibleCounter, setIsVisibleCounter] = useState(true);
   const [users, setUsers] = useState([
     { id: uuidv4(), name: "Alice", age: 19, gender: "female" },
     { id: uuidv4(), name: "John", age: 20, gender: "male" },
@@ -35,9 +36,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {/* {renderNameCard()}
-        <TotalAge users={users} /> */}
-        {isLoggedIn && <h4>Account is Hieu</h4>}
+        {/* {isLoggedIn && <h4>Account is Hieu</h4>}
         <button
           style={{ backgroundColor: isLoggedIn ? "yellow" : "red" }}
           onClick={() => {
@@ -46,7 +45,11 @@ function App() {
         >
           {isLoggedIn ? "Logout" : "Login"}
         </button>
-        <TodoList />
+        <TodoList /> */}
+        <button onClick={() => setIsVisibleCounter(!isVisibleCounter)}>{`${
+          isVisibleCounter ? "Close" : "Open"
+        } Counter`}</button>
+        {isVisibleCounter && <Counter />}
       </header>
     </div>
   );

@@ -1,6 +1,6 @@
 .counter {
-    margin:8px;
-    padding: 10px 40px;
+    margin:4px;
+    padding: 8px 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,7 +10,7 @@
     border-image-source: linear-gradient(to right, #30CFD0 0%, #330867 100%);
 }
 
-.counter h1 {
+.counter h3 {
     margin: 2px;
     background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
     background-clip: text;
