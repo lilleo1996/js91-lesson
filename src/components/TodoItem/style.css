@@ -1,0 +1,60 @@
+.task-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    width: 430px;
+    background-color: whitesmoke;
+    padding: 0px 20px;
+    border-radius: 8px;
+}
+.hide_element{
+    display: none;
+}
+
+.task{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.checkBox{
+    color:gray;
+    font-size: 30px;
+    cursor: pointer;
+    padding-top: 5px;
+    
+}
+.checkBox:hover{
+    opacity: 0.7;
+}
+.completed{
+    color:rgb(186, 73, 73);
+
+}
+
+.todo-task{
+    font-weight: 600;
+    color: black;
+}
+.finish{
+    color: gray;
+    text-decoration: line-through;
+}
+
+.edit-button{
+    border: 1px solid rgb(69, 61, 61);
+    border-radius: 5px;
+    padding: 2px 4px;
+    font-weight: 900;
+    cursor: pointer;
+    color: rgb(69, 61, 61);
+    opacity: 0.7;
+}
+.edit-button:hover{
+    opacity: 1;
+    background-color: rgb(223, 223, 223);
+}

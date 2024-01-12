@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 
 import "./style.css";
+import ThemeContext from "../../contexts/ThemeContext";
 
 const LoginForm = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+  const themeContext = useContext(ThemeContext);
 
   const handleChangeName = (e) => {
     console.log(e.target.value);
@@ -27,7 +29,12 @@ const LoginForm = () => {
   };
 
   return (
-    <form className="login-form" onSubmit={handleSubmitForm}>
+    <form
+      className={`login-form ${
+        themeContext.theme === "light" ? "light" : "dark"
+      }`}
+      onSubmit={handleSubmitForm}
+    >
       <div className="name-input">
         <label>Name:</label>
         <input type="text" value={name} onChange={handleChangeName}></input>
